@@ -7,13 +7,14 @@ fn main(){
 
 
 #[tokio::main]
-//#[test] //show block height。
+//Returns the number of the most recent block.
+//#[test]
 async fn high() -> web3::Result<()>{
     let transport = web3::transports::Http::new("http://localhost:8540")?;
     let web3 = web3::Web3::new(transport);
 
     let block_num = web3.eth().block_number().await?;
-    println!("block height : {:?}",block_num);
+    println!("The number of the most recent block is : {:?}",block_num);
 
     Ok(())
 }
@@ -22,7 +23,8 @@ async fn high() -> web3::Result<()>{
 
 
 #[tokio::main]
-//#[test] //accounts and balance.
+//Returns a list of addresses owned by client and the balance of the account of given address.
+//#[test]
 async fn account_balance() -> web3::Result<()> {
     let transport = web3::transports::Http::new("http://localhost:8540")?;
     let web3 = web3::Web3::new(transport);
