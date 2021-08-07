@@ -20,11 +20,6 @@ async fn high() -> web3::Result<()>{
 }
 
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 5bc5e82 (first commit)
 #[tokio::main]
 //Returns a list of addresses owned by client and the balance of the account of given address.
 //#[test]
@@ -36,11 +31,7 @@ async fn account_balance() -> web3::Result<()> {
     let mut accounts = web3.eth().accounts().await?;
     println!("Accounts: {:?}", accounts);
     accounts.push("0x00Aa39d30F0D20FF03a22cCfc30B7EfbFca597C2".parse().unwrap());
-<<<<<<< HEAD
-
-=======
     accounts.push("0x002e28950558fbede1a9675cb113f0bd20912019".parse().unwrap());
->>>>>>> 5bc5e82 (first commit)
     println!("Calling balance.");
     for account in accounts {
         let balance = web3.eth().balance(account, None).await?;
